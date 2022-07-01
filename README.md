@@ -1,7 +1,3 @@
-# :: Swift_study
+# :: Hufstory
 
-## Learning Swift
-
-### __Plan__
-#### Swift 기본 문법 이해 (2021.09 ~ )
-#### 네이버 부스트코스 iOS 스위프트 기초 수료 (2021.11.09)
+* Hufstory 관련 내용 업로드 레포지토리
