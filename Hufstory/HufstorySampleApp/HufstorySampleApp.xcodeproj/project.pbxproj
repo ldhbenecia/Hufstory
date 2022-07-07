@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891F5AF12876EDE500ADD36B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 891F5AF02876EDE500ADD36B /* GoogleService-Info.plist */; };
 		89D1EE02286EFCE100247C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1EE01286EFCE100247C7B /* AppDelegate.swift */; };
 		89D1EE04286EFCE100247C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1EE03286EFCE100247C7B /* SceneDelegate.swift */; };
 		89D1EE09286EFCE100247C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1EE07286EFCE100247C7B /* Main.storyboard */; };
@@ -14,9 +15,12 @@
 		89D1EE0E286EFCE200247C7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1EE0C286EFCE200247C7B /* LaunchScreen.storyboard */; };
 		89D1EE16286EFD5400247C7B /* startViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1EE15286EFD5400247C7B /* startViewController.swift */; };
 		89D1EE18286EFDD500247C7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1EE17286EFDD500247C7B /* LoginViewController.swift */; };
+		B404B8D915ACC15492E8803C /* Pods_HufstorySampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC21F8A7984C4152E79B8D6 /* Pods_HufstorySampleApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FD06F05A93A936A01C708AB /* Pods-HufstorySampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HufstorySampleApp.release.xcconfig"; path = "Target Support Files/Pods-HufstorySampleApp/Pods-HufstorySampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		891F5AF02876EDE500ADD36B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89D1EDFE286EFCE100247C7B /* HufstorySampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HufstorySampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D1EE01286EFCE100247C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D1EE03286EFCE100247C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		89D1EE0F286EFCE200247C7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89D1EE15286EFD5400247C7B /* startViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startViewController.swift; sourceTree = "<group>"; };
 		89D1EE17286EFDD500247C7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8CC21F8A7984C4152E79B8D6 /* Pods_HufstorySampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HufstorySampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA3A8EAC758885037E736DBA /* Pods-HufstorySampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HufstorySampleApp.debug.xcconfig"; path = "Target Support Files/Pods-HufstorySampleApp/Pods-HufstorySampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B404B8D915ACC15492E8803C /* Pods_HufstorySampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				89D1EE00286EFCE100247C7B /* HufstorySampleApp */,
 				89D1EDFF286EFCE100247C7B /* Products */,
+				FF9AA13BBAE561A11E560C80 /* Pods */,
+				E564A703FDE6B9E27E5F9A9D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +75,27 @@
 				89D1EE0A286EFCE200247C7B /* Assets.xcassets */,
 				89D1EE0C286EFCE200247C7B /* LaunchScreen.storyboard */,
 				89D1EE0F286EFCE200247C7B /* Info.plist */,
+				891F5AF02876EDE500ADD36B /* GoogleService-Info.plist */,
 			);
 			path = HufstorySampleApp;
+			sourceTree = "<group>";
+		};
+		E564A703FDE6B9E27E5F9A9D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CC21F8A7984C4152E79B8D6 /* Pods_HufstorySampleApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF9AA13BBAE561A11E560C80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA3A8EAC758885037E736DBA /* Pods-HufstorySampleApp.debug.xcconfig */,
+				5FD06F05A93A936A01C708AB /* Pods-HufstorySampleApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89D1EE12286EFCE200247C7B /* Build configuration list for PBXNativeTarget "HufstorySampleApp" */;
 			buildPhases = (
+				C7C13219F26EFBBFB868FB6A /* [CP] Check Pods Manifest.lock */,
 				89D1EDFA286EFCE100247C7B /* Sources */,
 				89D1EDFB286EFCE100247C7B /* Frameworks */,
 				89D1EDFC286EFCE100247C7B /* Resources */,
+				9E870939968F32A85F7B2DB9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,10 +161,53 @@
 				89D1EE0E286EFCE200247C7B /* LaunchScreen.storyboard in Resources */,
 				89D1EE0B286EFCE200247C7B /* Assets.xcassets in Resources */,
 				89D1EE09286EFCE100247C7B /* Main.storyboard in Resources */,
+				891F5AF12876EDE500ADD36B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E870939968F32A85F7B2DB9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HufstorySampleApp/Pods-HufstorySampleApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HufstorySampleApp/Pods-HufstorySampleApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HufstorySampleApp/Pods-HufstorySampleApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7C13219F26EFBBFB868FB6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HufstorySampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89D1EDFA286EFCE100247C7B /* Sources */ = {
@@ -288,6 +361,7 @@
 		};
 		89D1EE13286EFCE200247C7B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA3A8EAC758885037E736DBA /* Pods-HufstorySampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +389,7 @@
 		};
 		89D1EE14286EFCE200247C7B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FD06F05A93A936A01C708AB /* Pods-HufstorySampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
