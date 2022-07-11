@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -21,6 +22,18 @@ class LoginViewController: UIViewController {
         nextButton.layer.cornerRadius = 30
         nextButton.isEnabled = false
         
+        emailTextField.layer.cornerRadius = 10
+        emailTextField.layer.borderColor = UIColor.white.cgColor
+        emailTextField.layer.borderWidth = 1
+        
+        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.layer.borderColor = UIColor.white.cgColor
+        passwordTextField.layer.borderWidth = 1
+        
+        nextButton.layer.cornerRadius = 30
+        nextButton.layer.borderColor = UIColor.white.cgColor
+        nextButton.layer.borderWidth = 1
+        
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
@@ -30,6 +43,22 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        // 신규 사용자 생성
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in guard let self = self else { return }
+            
+            self.showMainViewController() // 로그인이 제대로 되었을 때 다음 화면으로 넘어감
+        }
+    }
+    
+    private func showMainViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        mainViewController.modalPresentationStyle = .fullScreen
+        navigationController?.show(mainViewController, sender: nil)
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainViewContrller: UIViewController {
     
@@ -21,5 +22,6 @@ class MainViewContrller: UIViewController {
         
         // back버튼 삭제
         navigationController?.navigationBar.isHidden = true
+        
     }
 }
