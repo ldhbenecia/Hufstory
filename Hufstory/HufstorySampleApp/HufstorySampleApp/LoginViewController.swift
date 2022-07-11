@@ -50,7 +50,18 @@ class LoginViewController: UIViewController {
         // 신규 사용자 생성
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in guard let self = self else { return }
             
-            self.showMainViewController() // 로그인이 제대로 되었을 때 다음 화면으로 넘어감
+            if let error = error {
+                let code = (error as NSError).code
+                switch code {
+                case 17007: // 이미 가입한 계정일 때
+                    // 로그인하기
+                    self.loginUser(withEmail: email, password: password)
+                default:
+                    self.errorMessageLabel.text = error.localizedDescription
+                }
+            } else { // error가 발생하지 않았을 때
+                self.showMainViewController() // 로그인이 제대로 되었을 때 다음 화면으로 넘어감
+            }
         }
     }
     
@@ -59,6 +70,17 @@ class LoginViewController: UIViewController {
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         mainViewController.modalPresentationStyle = .fullScreen
         navigationController?.show(mainViewController, sender: nil)
+    }
+    
+    private func loginUser(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] _, error in guard let self = self else { return }
+            
+            if let error = error {
+                self.errorMessageLabel.text = error.localizedDescription
+            } else {
+                self.showMainViewController()
+            }
+        }
     }
 }
 
