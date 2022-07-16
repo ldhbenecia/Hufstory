@@ -227,10 +227,10 @@
             </objects>
             <point key="canvasLocation" x="1206" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Contrller-->
         <scene sceneID="hU0-6l-I9x">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="efg-zU-Ljx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="efg-zU-Ljx" customClass="MainViewContrller" customModule="HufstorySampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cAr-ut-gND">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,13 +241,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="자유게시판" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTm-YL-L3y">
-                                <rect key="frame" x="121" y="160" width="173" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sg-4F-2w2">
+                                <rect key="frame" x="141" y="186" width="132" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="자유게시판">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VEF-qt-Xsc" kind="show" id="Apy-zo-r9G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c3Z-YQ-g6h"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,37 +262,75 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ouh-Sn-Zqu"/>
+                    <connections>
+                        <outlet property="freeBoardButton" destination="6Sg-4F-2w2" id="VNc-Pa-eEH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYi-JY-ftZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="138"/>
+            <point key="canvasLocation" x="1840.5797101449277" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Board List View Controller-->
         <scene sceneID="YQx-h0-b93">
             <objects>
-                <viewController id="VEF-qt-Xsc" sceneMemberID="viewController">
+                <viewController id="VEF-qt-Xsc" customClass="BoardListViewController" customModule="HufstorySampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KD4-Cr-FAd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="게시글 목록들" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-4c-8jE">
-                                <rect key="frame" x="99" y="202" width="217" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-oy-2Gc">
-                                <rect key="frame" x="177" y="548" width="61" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="글쓰기"/>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jyr-5b-xpn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="LFt-93-a1k" detailTextLabel="Y1M-Vs-ZNx" style="IBUITableViewCellStyleSubtitle" id="vIS-WR-4a3">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vIS-WR-4a3" id="u72-qc-aJi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LFt-93-a1k">
+                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1M-Vs-ZNx">
+                                                    <rect key="frame" x="20" y="22.5" width="30.5" height="13.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aTI-0e-Hj9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aTI-0e-Hj9" firstAttribute="bottom" secondItem="jyr-5b-xpn" secondAttribute="bottom" id="0rH-vO-Cz6"/>
+                            <constraint firstItem="jyr-5b-xpn" firstAttribute="top" secondItem="aTI-0e-Hj9" secondAttribute="top" id="KcX-ZE-ahJ"/>
+                            <constraint firstItem="jyr-5b-xpn" firstAttribute="leading" secondItem="aTI-0e-Hj9" secondAttribute="leading" id="aXy-7v-cP9"/>
+                            <constraint firstItem="aTI-0e-Hj9" firstAttribute="trailing" secondItem="jyr-5b-xpn" secondAttribute="trailing" id="n0D-Cy-alO"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="GWd-aD-XZk">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="b4Y-a3-qjK"/>
+                        <barButtonItem key="rightBarButtonItem" title="글 쓰기" id="OD5-a4-Kh9">
+                            <connections>
+                                <segue destination="eHH-xx-VkR" kind="show" id="f0e-jR-z0B"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="jyr-5b-xpn" id="Vng-Uk-727"/>
+                        <outlet property="tapAddButton" destination="OD5-a4-Kh9" id="t2c-fm-FtR"/>
+                        <outlet property="tapEditButton" destination="b4Y-a3-qjK" id="nAS-5u-5Ng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GR6-u0-CUB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -318,10 +361,11 @@
                         <viewLayoutGuide key="safeArea" id="Swx-gJ-p8V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HVN-tF-C6Y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puI-42-lo8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3183" y="138"/>
+            <point key="canvasLocation" x="3252" y="138"/>
         </scene>
     </scenes>
     <resources>

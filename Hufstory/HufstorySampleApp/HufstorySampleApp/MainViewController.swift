@@ -10,6 +10,8 @@ import FirebaseAuth
 
 class MainViewContrller: UIViewController {
     
+
+    @IBOutlet weak var freeBoardButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
