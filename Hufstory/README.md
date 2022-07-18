@@ -14,6 +14,12 @@
         errorMessageLabel.text = error.localizedDescription로 에러코드 구현
     - placeholder 색상 변경
 
+* 2022.07.18
+    - TableView Placeholder 구현해야함
+    - TextView에 WriteBoardViewController에서 작성된 내용을 가지고 와서 함수 구현해야 함
+        - TextView에 어떻게 가져와서 구현해야할지 모르겠음
+    - WriteBoardViewController에서 제목과 내용이 전부 찼을 때 tap bar button 완료 버튼이 활성화 되도록 구현해야 함
+    
     
     
 * Failed to log metrics 오류가 발생하여 실행을 해도 시작하는 View가 나타나지 않았음
