@@ -10,6 +10,8 @@
 		891F5AF12876EDE500ADD36B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 891F5AF02876EDE500ADD36B /* GoogleService-Info.plist */; };
 		891F5AF32878595500ADD36B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F5AF22878595400ADD36B /* MainViewController.swift */; };
 		891F5AF52882B2DD00ADD36B /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F5AF42882B2DD00ADD36B /* BoardListViewController.swift */; };
+		891F5AF92885382400ADD36B /* WriteBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F5AF82885382400ADD36B /* WriteBoardViewController.swift */; };
+		891F5AFB28853F6B00ADD36B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891F5AFA28853F6B00ADD36B /* Board.swift */; };
 		89D1EE02286EFCE100247C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1EE01286EFCE100247C7B /* AppDelegate.swift */; };
 		89D1EE04286EFCE100247C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D1EE03286EFCE100247C7B /* SceneDelegate.swift */; };
 		89D1EE09286EFCE100247C7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D1EE07286EFCE100247C7B /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		891F5AF02876EDE500ADD36B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		891F5AF22878595400ADD36B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		891F5AF42882B2DD00ADD36B /* BoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
+		891F5AF82885382400ADD36B /* WriteBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteBoardViewController.swift; sourceTree = "<group>"; };
+		891F5AFA28853F6B00ADD36B /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		89D1EDFE286EFCE100247C7B /* HufstorySampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HufstorySampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D1EE01286EFCE100247C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89D1EE03286EFCE100247C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				89D1EE17286EFDD500247C7B /* LoginViewController.swift */,
 				891F5AF22878595400ADD36B /* MainViewController.swift */,
 				891F5AF42882B2DD00ADD36B /* BoardListViewController.swift */,
+				891F5AF82885382400ADD36B /* WriteBoardViewController.swift */,
+				891F5AFA28853F6B00ADD36B /* Board.swift */,
 				89D1EE0A286EFCE200247C7B /* Assets.xcassets */,
 				89D1EE0C286EFCE200247C7B /* LaunchScreen.storyboard */,
 				89D1EE0F286EFCE200247C7B /* Info.plist */,
@@ -219,11 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891F5AF92885382400ADD36B /* WriteBoardViewController.swift in Sources */,
 				89D1EE18286EFDD500247C7B /* LoginViewController.swift in Sources */,
 				89D1EE02286EFCE100247C7B /* AppDelegate.swift in Sources */,
 				891F5AF52882B2DD00ADD36B /* BoardListViewController.swift in Sources */,
 				89D1EE16286EFD5400247C7B /* startViewController.swift in Sources */,
 				89D1EE04286EFCE100247C7B /* SceneDelegate.swift in Sources */,
+				891F5AFB28853F6B00ADD36B /* Board.swift in Sources */,
 				891F5AF32878595500ADD36B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

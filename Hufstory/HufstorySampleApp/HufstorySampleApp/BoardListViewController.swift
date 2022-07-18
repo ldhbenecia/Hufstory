@@ -9,6 +9,7 @@ import UIKit
 
 class BoardListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var board = [Board]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tapEditButton: UIBarButtonItem!
@@ -22,7 +23,7 @@ class BoardListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

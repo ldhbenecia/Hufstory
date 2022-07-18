@@ -336,34 +336,60 @@
             </objects>
             <point key="canvasLocation" x="2525" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Write Board View Controller-->
         <scene sceneID="fsv-Aw-JBe">
             <objects>
-                <viewController id="eHH-xx-VkR" sceneMemberID="viewController">
+                <viewController id="eHH-xx-VkR" customClass="WriteBoardViewController" customModule="HufstorySampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QmN-fR-yLl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bo-as-Jof">
-                                <rect key="frame" x="157" y="545" width="77" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="작성 완료"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="글 쓰기 화면 구성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T7y-NI-yW0">
-                                <rect key="frame" x="73" y="195" width="268" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-50-wxq">
+                                <rect key="frame" x="30" y="138" width="354" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Yme-EM-Ck6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="titleTextField:" destination="yOf-JV-0Vp" eventType="editingDidEnd" id="Vbv-Ld-Ora"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="TqJ-3q-SfZ">
+                                <rect key="frame" x="30" y="218" width="354" height="544"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Swx-gJ-p8V"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Swx-gJ-p8V" firstAttribute="bottom" secondItem="TqJ-3q-SfZ" secondAttribute="bottom" constant="100" id="6kH-Nu-LfR"/>
+                            <constraint firstItem="sTx-50-wxq" firstAttribute="leading" secondItem="Swx-gJ-p8V" secondAttribute="leading" constant="30" id="NOy-Mu-zCl"/>
+                            <constraint firstItem="sTx-50-wxq" firstAttribute="top" secondItem="Swx-gJ-p8V" secondAttribute="top" constant="50" id="PH7-2j-7fh"/>
+                            <constraint firstItem="TqJ-3q-SfZ" firstAttribute="leading" secondItem="Swx-gJ-p8V" secondAttribute="leading" constant="30" id="Pmr-s9-oDX"/>
+                            <constraint firstItem="TqJ-3q-SfZ" firstAttribute="top" secondItem="sTx-50-wxq" secondAttribute="bottom" constant="20" id="S4q-IH-SMq"/>
+                            <constraint firstItem="Swx-gJ-p8V" firstAttribute="trailing" secondItem="TqJ-3q-SfZ" secondAttribute="trailing" constant="30" id="cLg-rG-4U2"/>
+                            <constraint firstItem="Swx-gJ-p8V" firstAttribute="trailing" secondItem="sTx-50-wxq" secondAttribute="trailing" constant="30" id="pZY-dP-DnX"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HVN-tF-C6Y"/>
+                    <navigationItem key="navigationItem" id="HVN-tF-C6Y">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="AvO-as-WDi">
+                            <connections>
+                                <action selector="tapConfirmButton:" destination="eHH-xx-VkR" id="hRN-Mm-GY0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="confirmButton" destination="AvO-as-WDi" id="n4a-OD-GZT"/>
+                        <outlet property="contentsTextView" destination="TqJ-3q-SfZ" id="mn1-dn-SMq"/>
+                        <outlet property="titleTextField" destination="sTx-50-wxq" id="iJ6-Qp-avi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puI-42-lo8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="yOf-JV-0Vp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3252" y="138"/>
         </scene>
@@ -372,6 +398,9 @@
         <image name="KakaoTalk_Photo_2022-07-01-21-06-33" width="170.66667175292969" height="170.66667175292969"/>
         <image name="logo_apple" width="33.333332061767578" height="33.333332061767578"/>
         <image name="logo_google" width="33.333332061767578" height="33.333332061767578"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
